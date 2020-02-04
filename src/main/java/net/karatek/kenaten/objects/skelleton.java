@@ -1,7 +1,7 @@
-package net.karatek.goobot.objects;
+package net.karatek.kenaten.objects;
 
-import net.karatek.goobot.utils.adb;
-import net.karatek.goobot.utils.image;
+import net.karatek.kenaten.utils.adb;
+import net.karatek.kenaten.utils.image;
 
 public class skelleton {
 

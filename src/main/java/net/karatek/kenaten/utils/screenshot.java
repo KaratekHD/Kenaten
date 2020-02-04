@@ -1,7 +1,7 @@
-package net.karatek.goobot.utils;
+package net.karatek.kenaten.utils;
 
-import static net.karatek.goobot.utils.adb.runShellCommand;
-import static net.karatek.goobot.utils.linux.runLinuxCommand;
+import static net.karatek.kenaten.utils.adb.runShellCommand;
+import static net.karatek.kenaten.utils.linux.runLinuxCommand;
 
 public class screenshot {
 

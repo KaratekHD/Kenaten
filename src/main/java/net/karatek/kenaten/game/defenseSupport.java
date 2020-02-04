@@ -1,4 +1,4 @@
-package net.karatek.goobot.game;
+package net.karatek.kenaten.game;
 
 public class defenseSupport {
 

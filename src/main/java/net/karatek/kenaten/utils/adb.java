@@ -1,14 +1,14 @@
-package net.karatek.goobot.utils;
+package net.karatek.kenaten.utils;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class linux {
+public class adb {
 
-    public static String runLinuxCommand(String cmd) {
+    public static String runShellCommand(String cmd) {
 
         try {
-            Process p = Runtime.getRuntime().exec(cmd);
+            Process p = Runtime.getRuntime().exec("/home/jens/Executables/platform-tools/adb shell " + cmd);
 
             p.waitFor();
             BufferedReader buf = new BufferedReader(new InputStreamReader(
@@ -22,11 +22,12 @@ public class linux {
 
             return output;
         } catch (Exception ignored) {
-
             ignored.printStackTrace();
-
         }
-
         return "";
+    }
+
+    public static void tap(int x, int y) {
+        runShellCommand("input tap " + x + " " + y);
     }
 }

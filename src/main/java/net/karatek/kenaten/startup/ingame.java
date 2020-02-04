@@ -1,6 +1,6 @@
-package net.karatek.goobot.startup;
+package net.karatek.kenaten.startup;
 
-import static net.karatek.goobot.utils.adb.tap;
+import static net.karatek.kenaten.utils.adb.tap;
 
 public class ingame {
 

@@ -1,7 +1,7 @@
-package net.karatek.goobot.startup;
+package net.karatek.kenaten.startup;
 
-import net.karatek.goobot.data;
-import net.karatek.goobot.utils.adb;
+import net.karatek.kenaten.data;
+import net.karatek.kenaten.utils.adb;
 
 public class preWork {
     public static void checkCorrectApp() {

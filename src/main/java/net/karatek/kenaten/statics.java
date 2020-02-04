@@ -1,4 +1,4 @@
-package net.karatek.goobot;
+package net.karatek.kenaten;
 
 public class statics {
 

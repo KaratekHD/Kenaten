@@ -1,4 +1,4 @@
-package net.karatek.goobot.utils;
+package net.karatek.kenaten.utils;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
