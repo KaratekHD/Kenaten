@@ -8,6 +8,7 @@ public class adb {
     public static String runShellCommand(String cmd) {
 
         try {
+            // This is not supposed to stay like it is. It is just stupid and I am to lazy to add this stuff to my $PATH.
             Process p = Runtime.getRuntime().exec("/home/jens/Executables/platform-tools/adb shell " + cmd);
 
             p.waitFor();

@@ -2,7 +2,8 @@ package net.karatek.kenaten.device.sony;
 
 import net.karatek.kenaten.objects.Coordinate;
 
-public class xperiaz3 {
+public class z3 {
+
     // Kenaten Device File
 
     String vendor = "Sony";
@@ -18,4 +19,5 @@ public class xperiaz3 {
     Coordinate swipeb = new Coordinate(1051, 535);
     Coordinate supportChecker = new Coordinate(910, 831);
     Coordinate supportTargetLocation = new Coordinate(331, 856);
+
 }
