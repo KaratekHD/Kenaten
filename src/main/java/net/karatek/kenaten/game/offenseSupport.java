@@ -18,9 +18,13 @@ public class offenseSupport {
             System.out.println("[DEBUG] Loading...");
         }
         System.out.println("Loaded.");
+
+        // Swipe to the upper left corner
         adb.runShellCommand("input swipe 539 529 1051 535");
-        skeleton.click();
+
         // Place object
+        skeleton.click();
+
         while (!(image.getPixel(910, 831).equals(107162156))) {
             screenshot.shot();
             // Maybe improve these coordinates?
@@ -32,6 +36,7 @@ public class offenseSupport {
                 e.printStackTrace();
             }
         }
+        // Exit
         quitButton.click();
     }
 }

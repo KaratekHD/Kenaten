@@ -5,6 +5,8 @@ import net.karatek.kenaten.utils.image;
 
 public class battleBox {
 
+    // This is basically just a class for making pressing buttons and getting colors easy.
+
     public static int x = 1365;
     public static int y = 428;
 

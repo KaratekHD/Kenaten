@@ -1,8 +1,10 @@
-package net.karatek.kenaten.device;
+package net.karatek.kenaten.device.oneplus;
 
 import net.karatek.kenaten.objects.Coordinate;
 
-public class template {
+public class enchilda {
+
+    // WIP!!!
 
     // Kenaten Device File
     // Copy this to a package like this:
@@ -22,5 +24,4 @@ public class template {
     Coordinate swipeb = new Coordinate(0, 0);
     Coordinate supportChecker = new Coordinate(0, 0);
     Coordinate supportTargetLocation = new Coordinate(0, 0);
-
 }

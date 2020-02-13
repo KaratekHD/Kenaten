@@ -1,6 +1,5 @@
 package net.karatek.kenaten;
 
-import net.karatek.kenaten.device.Device;
 import net.karatek.kenaten.exceptions.DeviceNameNotFoundException;
 import net.karatek.kenaten.game.offenseSupport;
 import net.karatek.kenaten.objects.battleBox;
@@ -23,7 +22,7 @@ public class Main {
         preWork.checkCorrectApp();
 
         // Load list of supported devices and coordinates
-        Device.initializeDevices();
+        preWork.initializeDevices();
 
         // set device from data class
         try {

@@ -4,6 +4,8 @@ import net.karatek.kenaten.utils.image;
 
 public class placeholder {
 
+    // This is basically just a class for making pressing buttons and getting colors easy.
+
     public static int x = 910;
     public static int y = 831;
 

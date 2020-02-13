@@ -4,10 +4,8 @@ import java.util.ArrayList;
 
 public class Device {
 
+    // Initialize an arraylist for all supported devices
     public static ArrayList<String> deviceList = new ArrayList<String>();
-    
-    public static void initializeDevices() {
-        deviceList.add("xperiaz3");
-        deviceList.add("oneplus6");
-    }
+
+
 }
