@@ -6,6 +6,7 @@ package net.karatek.kenaten.game;
  * @author Karatek_HD
  * Copyright (C) 2020 Karatek_HD <kontakt@karatek.net>
  * Copyright (C) 2020 The Kenaten Development Team
+ * Tested by the Alliance "Tod oder Lebendig" with great support from our leader Nyx.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
