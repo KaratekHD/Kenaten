@@ -28,7 +28,7 @@ import net.karatek.kenaten.utils.image;
 
 public class skeleton {
 
-    // This is basically just a class for making pressing buttons and getting colors easy.
+    // This is basically just a class for making pressing buttons and getting colors more easy.
 
     public static int x = 108;
     public static int y = 432;

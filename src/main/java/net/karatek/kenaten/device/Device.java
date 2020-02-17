@@ -23,12 +23,53 @@ package net.karatek.kenaten.device;
  *
  */
 
-import java.util.ArrayList;
+import net.karatek.kenaten.exceptions.DeviceNameNotFoundException;
+import net.karatek.kenaten.objects.Coordinate;
 
 public class Device {
 
-    // Initialize an arraylist for all supported devices
-    public static ArrayList<String> deviceList = new ArrayList<String>();
+    // Initialize variables
+    public static String deviceCodename;
+    public static Coordinate battleBox;
+    public static Coordinate placeholder;
+    public static Coordinate quitButton;
+    public static Coordinate skeleton;
+    public static Coordinate supportLoadingBar;
+    public static Coordinate swipea;
+    public static Coordinate swipeb;
+    public static Coordinate supportChecker;
+    public static Coordinate supportTargetLocation;
 
-
+    // constructor; set variables
+    public Device(String codename) throws DeviceNameNotFoundException {
+        deviceCodename = codename;
+        if(!deviceHelper.deviceList.contains(deviceCodename)) {
+            throw new DeviceNameNotFoundException(deviceCodename);
+        }
+        switch (deviceCodename) {
+            case "z3":
+                battleBox = new Coordinate(1365, 428);
+                placeholder = new Coordinate(910, 831);
+                quitButton = new Coordinate(1743, 1018);
+                skeleton = new Coordinate(108, 432); 
+                supportLoadingBar = new Coordinate(1096, 1029);
+                swipea = new Coordinate(539, 529);
+                swipeb = new Coordinate(1051, 535);
+                supportChecker = new Coordinate(910, 831);
+                supportTargetLocation = new Coordinate(331, 856);
+                break;
+            case "serranoltex":
+                break;
+            default:
+                battleBox = new Coordinate(0, 0);
+                placeholder = new Coordinate(0, 0);
+                quitButton = new Coordinate(0, 0);
+                skeleton = new Coordinate(0, 0);
+                supportLoadingBar = new Coordinate(0, 0);
+                swipea = new Coordinate(0, 0);
+                swipeb = new Coordinate(0, 0);
+                supportChecker = new Coordinate(0, 0);
+                supportTargetLocation = new Coordinate(0, 0);
+        }
+    }
 }

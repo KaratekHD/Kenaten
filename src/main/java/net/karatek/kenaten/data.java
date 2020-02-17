@@ -23,11 +23,15 @@ package net.karatek.kenaten;
  *
  */
 
+import net.karatek.kenaten.device.Device;
+
 public class data {
 
     // In this class we store some important variables
 
-    public static String device = "xperiaz3";
+    public static String devicename = "xperiaz3";
+
+    public static Device device;
 
     public static boolean correctApp;
 

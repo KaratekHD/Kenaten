@@ -26,7 +26,7 @@ package net.karatek.kenaten.startup;
 import net.karatek.kenaten.data;
 import net.karatek.kenaten.utils.adb;
 
-import static net.karatek.kenaten.device.Device.deviceList;
+import static net.karatek.kenaten.device.deviceHelper.deviceList;
 
 public class preWork {
     public static void checkCorrectApp() {

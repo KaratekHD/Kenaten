@@ -35,4 +35,5 @@ public class placeholder {
     public static String getColor() {
         return image.getPixel(x, y);
     }
+
 }

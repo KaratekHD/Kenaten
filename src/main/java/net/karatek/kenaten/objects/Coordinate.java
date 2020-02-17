@@ -27,8 +27,8 @@ public class Coordinate {
 
     // This is basically just a class for making pressing buttons and getting colors easy.
 
-    private int inputx;
-    private int inputy;
+    private static int inputx;
+    private static int inputy;
 
     public Coordinate(int x, int y) {
         inputx = x;
