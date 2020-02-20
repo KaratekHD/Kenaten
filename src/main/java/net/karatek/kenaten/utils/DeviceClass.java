@@ -23,21 +23,17 @@ package net.karatek.kenaten.utils;
  *
  */
 
-import net.karatek.kenaten.device.Device;
+import net.karatek.kenaten.device.deviceHelper;
 import net.karatek.kenaten.exceptions.DeviceNameNotFoundException;
 
 public class DeviceClass {
 
     public static boolean setDevice(String name) throws DeviceNameNotFoundException {
-        if(!Device.deviceList.contains(name)) {
+        if(!deviceHelper.deviceList.contains(name)) {
             throw new DeviceNameNotFoundException(name);
         } else {
             return true;
         }
     }
-
-
-
-
 
 }

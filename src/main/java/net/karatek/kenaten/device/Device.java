@@ -28,6 +28,7 @@ import net.karatek.kenaten.objects.Coordinate;
 
 public class Device {
 
+
     // Initialize variables
     public static String deviceCodename;
     public static Coordinate battleBox;
@@ -39,6 +40,8 @@ public class Device {
     public static Coordinate swipeb;
     public static Coordinate supportChecker;
     public static Coordinate supportTargetLocation;
+    public static Coordinate sidebar;
+    public static Coordinate tab;
 
     // constructor; set variables
     public Device(String codename) throws DeviceNameNotFoundException {
@@ -51,12 +54,14 @@ public class Device {
                 battleBox = new Coordinate(1365, 428);
                 placeholder = new Coordinate(910, 831);
                 quitButton = new Coordinate(1743, 1018);
-                skeleton = new Coordinate(108, 432); 
+                skeleton = new Coordinate(108, 432);
                 supportLoadingBar = new Coordinate(1096, 1029);
                 swipea = new Coordinate(539, 529);
                 swipeb = new Coordinate(1051, 535);
                 supportChecker = new Coordinate(910, 831);
                 supportTargetLocation = new Coordinate(331, 856);
+                sidebar = new Coordinate(1900, 560);
+                tab = new Coordinate(1167, 148);
                 break;
             case "serranoltex":
                 break;
@@ -70,6 +75,8 @@ public class Device {
                 swipeb = new Coordinate(0, 0);
                 supportChecker = new Coordinate(0, 0);
                 supportTargetLocation = new Coordinate(0, 0);
+                sidebar = new Coordinate(0, 0);
+                tab = new Coordinate(0, 0);
         }
     }
 }

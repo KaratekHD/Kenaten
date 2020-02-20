@@ -1,4 +1,4 @@
-package net.karatek.kenaten.startup;
+package net.karatek.kenaten.objects;
 
 /*
  * Kenaten - an easy to use Gods Of Olympus bot.
@@ -23,20 +23,23 @@ package net.karatek.kenaten.startup;
  *
  */
 
-import net.karatek.kenaten.data;
+import net.karatek.kenaten.device.Device;
 import net.karatek.kenaten.utils.adb;
+import net.karatek.kenaten.utils.image;
 
-import static net.karatek.kenaten.device.deviceHelper.deviceList;
+public class sidebar {
 
-public class preWork {
-    public static void checkCorrectApp() {
-        // I hope this is self explaining.
-        data.correctApp = adb.runShellCommand("dumpsys activity activities | grep ResumedActivity").contains("com.aegisinteractive.goo");
+    // This is basically just a class for making pressing buttons and getting colors easy.
+
+    public static int x = Device.sidebar.getX();
+    public static int y = Device.sidebar.getY();
+
+    public static void click() {
+        adb.tap(x, y);
     }
 
-    // call this inside your main, this will load up devices.
-    public static void initializeDevices() {
-        deviceList.add("z3");
-        // TO-DO deviceList.add("enchilda");
+    public static String getColor() {
+        return image.getPixel(x, y);
     }
+
 }

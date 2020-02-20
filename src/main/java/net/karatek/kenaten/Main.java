@@ -36,11 +36,16 @@ import org.apache.logging.log4j.*;
 
 public class Main {
 
+    public static final String VERSION = "0.1 pre-alpha";
+
     // Initialize Logger
     public static final Logger logger = LogManager.getLogger(Main.class);
 
 
     public static void main(String[] args) {
+
+        System.out.println("Running Kenaten v" + VERSION);
+        System.out.println("Copyright (C) 2020 The Kenaten Development Team");
 
         // check if game is running
         // TO-DO: Maybe autostart if not?
