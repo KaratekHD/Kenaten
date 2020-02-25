@@ -29,6 +29,7 @@ import net.karatek.kenaten.utils.adb;
 import static net.karatek.kenaten.device.deviceHelper.deviceList;
 
 public class preWork {
+
     public static void checkCorrectApp() {
         // I hope this is self explaining.
         data.correctApp = adb.runShellCommand("dumpsys activity activities | grep ResumedActivity").contains("com.aegisinteractive.goo");
@@ -37,9 +38,7 @@ public class preWork {
     // call this inside your main, this will load up devices.
     public static void initializeDevices() {
         deviceList.add("z3");
-        // TO-DO deviceList.add("enchilda");
+        deviceList.add("enchilda");
     }
+
 }
-/*
-ICH BIN AUCH DA!!
- */
