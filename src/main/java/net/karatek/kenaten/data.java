@@ -29,7 +29,7 @@ public class data {
 
     // In this class we store some important variables
 
-    public static String devicename = "xperiaz3";
+    public static String devicename = "enchilda";
 
     public static Device device;
 
