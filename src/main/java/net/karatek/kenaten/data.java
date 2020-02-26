@@ -24,6 +24,7 @@ package net.karatek.kenaten;
  */
 
 import net.karatek.kenaten.device.Device;
+import net.karatek.kenaten.exceptions.DeviceNameNotFoundException;
 
 public class data {
 
@@ -31,7 +32,8 @@ public class data {
 
     public static String devicename = "enchilda";
 
-    public static Device device;
+    public static Device device = new Device(devicename);
+
 
     public static boolean correctApp;
 

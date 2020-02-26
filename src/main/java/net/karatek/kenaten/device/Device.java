@@ -44,12 +44,24 @@ public class Device {
     public static Coordinate tab;
 
     // constructor; set variables
-    public Device(String codename) throws DeviceNameNotFoundException {
+    public Device(String codename){
         deviceCodename = codename;
         if(!deviceHelper.deviceList.contains(deviceCodename)) {
-            throw new DeviceNameNotFoundException(deviceCodename);
+
         }
         switch (deviceCodename) {
+            case "enchilda":
+                battleBox = new Coordinate(1730, 432);
+                placeholder = new Coordinate(910, 831);
+                quitButton = new Coordinate(1743, 1018);
+                skeleton = new Coordinate(108, 432);
+                supportLoadingBar = new Coordinate(1096, 1029);
+                swipea = new Coordinate(539, 529);
+                swipeb = new Coordinate(1051, 535);
+                supportChecker = new Coordinate(910, 831);
+                supportTargetLocation = new Coordinate(331, 856);
+                sidebar = new Coordinate(2092, 546);
+                tab = new Coordinate(1409, 140);
             case "z3":
                 battleBox = new Coordinate(1365, 428);
                 placeholder = new Coordinate(910, 831);
@@ -64,6 +76,7 @@ public class Device {
                 tab = new Coordinate(1167, 148);
                 break;
             case "serranoltex":
+                // TODO: 25.02.20  This one is for you, @ttzug !
                 break;
             default:
                 battleBox = new Coordinate(0, 0);

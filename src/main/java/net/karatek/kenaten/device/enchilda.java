@@ -1,4 +1,4 @@
-package net.karatek.kenaten.startup;
+package net.karatek.kenaten.device;
 
 /*
  * Kenaten - an easy to use Gods Of Olympus bot.
@@ -23,18 +23,5 @@ package net.karatek.kenaten.startup;
  *
  */
 
-import net.karatek.kenaten.Main;
-import net.karatek.kenaten.objects.sidebar;
-import net.karatek.kenaten.objects.tab;
-
-import static net.karatek.kenaten.utils.adb.tap;
-
-public class ingame {
-
-    public static void openAllianceTab() {
-        // I don't have to say anything about this.
-        sidebar.click();
-        Main.logger.debug("Position of sidebar: " + sidebar.x + " " + sidebar.y);
-        tab.click();
-    }
+public class enchilda {
 }
