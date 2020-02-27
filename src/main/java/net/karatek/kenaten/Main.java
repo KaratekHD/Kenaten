@@ -54,8 +54,8 @@ public class Main {
         // Load list of supported devices and coordinates
         preWork.initializeDevices();
 
-        // set device from data class
 
+        // set device from data class
         try {
             DeviceClass.setDevice(data.devicename);
             data.device = new Device(data.devicename);
@@ -70,6 +70,12 @@ public class Main {
             System.exit(1);
             return;
         }
+
+        // prevent screen from turning off
+        preWork.keepScreenOn();
+
+        // add shutdown hook
+        preWork.addShutdownHook();
 
         // open alliance tab (Self explaining, isn't it? )
         ingame.openAllianceTab();

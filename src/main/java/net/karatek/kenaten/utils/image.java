@@ -24,12 +24,16 @@ package net.karatek.kenaten.utils;
  */
 
 import net.karatek.kenaten.Main;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
 public class image {
+    // Initialize Logger
+    public static final Logger logger = LogManager.getLogger(image.class);
     public static String getPixel(int x, int y){
         try {
             // get screenshot
@@ -44,7 +48,7 @@ public class image {
             return "" + red + green + blue;
 
         } catch (Exception e) {
-            Main.logger.error(e.getStackTrace().toString());
+            logger.error(e.getStackTrace().toString());
             return "";
         }
 

@@ -23,6 +23,7 @@ package net.karatek.kenaten.startup;
  *
  */
 
+import net.karatek.kenaten.Main;
 import net.karatek.kenaten.data;
 import net.karatek.kenaten.utils.adb;
 
@@ -39,6 +40,24 @@ public class preWork {
     public static void initializeDevices() {
         deviceList.add("z3");
         deviceList.add("enchilda");
+    }
+
+    // prevent screen from turning off
+    public static void keepScreenOn() {
+        adb.runShellCommand("svc power stayon usb");
+    }
+
+    // add a shutdown hook to the runtime
+    public static void addShutdownHook() {
+        Runtime.getRuntime().addShutdownHook(new Thread()
+        {
+            @Override
+            public void run() {
+                Main.logger.info("Ending...");
+                // Allow turning off the screen
+                adb.runShellCommand("svc power stayon false");
+            }
+        });
     }
 
 }

@@ -23,73 +23,136 @@ package net.karatek.kenaten.device;
  *
  */
 
-import net.karatek.kenaten.exceptions.DeviceNameNotFoundException;
+import net.karatek.kenaten.Main;
 import net.karatek.kenaten.objects.Coordinate;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Device {
+
+    // Initialize Logger
+    public static final Logger logger = LogManager.getLogger(Device.class);
 
 
     // Initialize variables
     public static String deviceCodename;
-    public static Coordinate battleBox;
-    public static Coordinate placeholder;
-    public static Coordinate quitButton;
-    public static Coordinate skeleton;
-    public static Coordinate supportLoadingBar;
-    public static Coordinate swipea;
-    public static Coordinate swipeb;
-    public static Coordinate supportChecker;
-    public static Coordinate supportTargetLocation;
-    public static Coordinate sidebar;
-    public static Coordinate tab;
+    public static Coordinate battleBox() {
+        switch (deviceCodename) {
+            case "z3":
+                return z3.battleBox;
+            default:
+                return null;
+
+        }
+
+    }
+
+    public static Coordinate placeholder() {
+        switch (deviceCodename) {
+            case "z3":
+                return z3.placeholder;
+            default:
+                return null;
+
+        }
+    }
+
+    public static Coordinate quitButton() {
+        switch (deviceCodename) {
+            case "z3":
+                return z3.quitButton;
+            default:
+                return null;
+
+        }
+    }
+
+    public static Coordinate skeleton() {
+        switch (deviceCodename) {
+            case "z3":
+                return z3.skeleton;
+            default:
+                return null;
+
+        }
+    }
+
+    public static Coordinate supportLoadingBar() {
+        switch (deviceCodename) {
+            case "z3":
+                return z3.supportLoadingBar;
+            default:
+                return null;
+
+        }
+    }
+
+    public static Coordinate swipea() {
+        switch (deviceCodename) {
+            case "z3":
+                return z3.swipea;
+            default:
+                return null;
+
+        }
+    }
+
+    public static Coordinate swipeb() {
+        switch (deviceCodename) {
+            case "z3":
+                return z3.swipeb;
+            default:
+                return null;
+
+        }
+    }
+
+    public static Coordinate supportChecker() {
+        switch (deviceCodename) {
+            case "z3":
+                return z3.supportChecker;
+            default:
+                return null;
+
+        }
+    }
+
+    public static Coordinate supportTargetLocation() {
+        switch (deviceCodename) {
+            case "z3":
+                return z3.supportTargetLocation;
+            default:
+                return null;
+
+        }
+    }
+
+    public static Coordinate sidebar() {
+        switch (deviceCodename) {
+            case "z3":
+                return z3.sidebar;
+            default:
+                return null;
+
+        }
+    }
+
+    public static Coordinate tab() {
+        switch (deviceCodename) {
+            case "z3":
+                return z3.tab;
+            default:
+                return null;
+
+        }
+    }
 
     // constructor; set variables
     public Device(String codename){
         deviceCodename = codename;
         if(!deviceHelper.deviceList.contains(deviceCodename)) {
-
-        }
-        switch (deviceCodename) {
-            case "enchilda":
-                battleBox = new Coordinate(1730, 432);
-                placeholder = new Coordinate(910, 831);
-                quitButton = new Coordinate(1743, 1018);
-                skeleton = new Coordinate(108, 432);
-                supportLoadingBar = new Coordinate(1096, 1029);
-                swipea = new Coordinate(539, 529);
-                swipeb = new Coordinate(1051, 535);
-                supportChecker = new Coordinate(910, 831);
-                supportTargetLocation = new Coordinate(331, 856);
-                sidebar = new Coordinate(2092, 546);
-                tab = new Coordinate(1409, 140);
-            case "z3":
-                battleBox = new Coordinate(1365, 428);
-                placeholder = new Coordinate(910, 831);
-                quitButton = new Coordinate(1743, 1018);
-                skeleton = new Coordinate(108, 432);
-                supportLoadingBar = new Coordinate(1096, 1029);
-                swipea = new Coordinate(539, 529);
-                swipeb = new Coordinate(1051, 535);
-                supportChecker = new Coordinate(910, 831);
-                supportTargetLocation = new Coordinate(331, 856);
-                sidebar = new Coordinate(1900, 560);
-                tab = new Coordinate(1167, 148);
-                break;
-            case "serranoltex":
-                // TODO: 25.02.20  This one is for you, @ttzug !
-                break;
-            default:
-                battleBox = new Coordinate(0, 0);
-                placeholder = new Coordinate(0, 0);
-                quitButton = new Coordinate(0, 0);
-                skeleton = new Coordinate(0, 0);
-                supportLoadingBar = new Coordinate(0, 0);
-                swipea = new Coordinate(0, 0);
-                swipeb = new Coordinate(0, 0);
-                supportChecker = new Coordinate(0, 0);
-                supportTargetLocation = new Coordinate(0, 0);
-                sidebar = new Coordinate(0, 0);
-                tab = new Coordinate(0, 0);
+            logger.fatal("Couldn't load device class.");
+            System.exit(3);
         }
     }
 }

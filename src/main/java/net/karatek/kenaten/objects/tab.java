@@ -31,8 +31,8 @@ public class tab {
 
     // This is basically just a class for making pressing buttons and getting colors more easy.
 
-    public static int x = Device.tab.getX();
-    public static int y = Device.tab.getY();
+    public static int x = Device.tab().getX();
+    public static int y = Device.tab().getY();
 
     public static void click() {
         adb.tap(x, y);

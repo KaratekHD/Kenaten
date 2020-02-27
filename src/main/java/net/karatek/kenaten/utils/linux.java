@@ -24,11 +24,16 @@ package net.karatek.kenaten.utils;
  */
 
 import net.karatek.kenaten.Main;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class linux {
+
+    // Initialize Logger
+    public static final Logger logger = LogManager.getLogger(linux.class);
 
     // This will run a linux shell command
     public static String runLinuxCommand(String cmd) {
@@ -51,7 +56,7 @@ public class linux {
             // return output
             return output;
         } catch (Exception e) {
-            Main.logger.error(e.getStackTrace());
+            logger.error(e.getStackTrace());
         }
 
         // return empty string if no output provided

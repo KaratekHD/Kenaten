@@ -31,8 +31,8 @@ public class sidebar {
 
     // This is basically just a class for making pressing buttons and getting colors easy.
 
-    public static int x = Device.sidebar.getX();
-    public static int y = Device.sidebar.getY();
+    public static int x = Device.sidebar().getX();
+    public static int y = Device.sidebar().getY();
 
     public static void click() {
         adb.tap(x, y);

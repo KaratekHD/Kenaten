@@ -31,8 +31,8 @@ public class quitButton {
 
     // This is basically just a class for making pressing buttons and getting colors easy.
 
-    public static int x = Device.quitButton.getX();
-    public static int y = Device.quitButton.getY();
+    public static int x = Device.quitButton().getX();
+    public static int y = Device.quitButton().getY();
 
     public static void click() {
         adb.tap(x, y);

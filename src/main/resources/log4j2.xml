@@ -5,7 +5,7 @@
     </Properties>
     <Appenders>
         <Console name="STDOUT" target="SYSTEM_OUT">
-            <PatternLayout pattern="[%-5p | %d{HH:mm:ss}] %m%n" />
+            <PatternLayout pattern="[%-5p | %d{HH:mm:ss}] %logger{36}: %m%n" />
         </Console>
     </Appenders>
     <Loggers>
