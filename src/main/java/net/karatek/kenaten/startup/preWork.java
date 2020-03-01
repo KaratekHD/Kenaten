@@ -25,11 +25,18 @@ package net.karatek.kenaten.startup;
 
 import net.karatek.kenaten.Main;
 import net.karatek.kenaten.data;
+import net.karatek.kenaten.device.Device;
+import net.karatek.kenaten.device.deviceHelper;
 import net.karatek.kenaten.utils.adb;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import static net.karatek.kenaten.device.deviceHelper.deviceList;
 
 public class preWork {
+
+    // Initialize Logger
+    public static final Logger logger = LogManager.getLogger(preWork.class);
 
     public static void checkCorrectApp() {
         // I hope this is self explaining.
@@ -40,6 +47,11 @@ public class preWork {
     public static void initializeDevices() {
         deviceList.add("z3");
         deviceList.add("enchilda");
+        Device.deviceCodename = data.devicename;
+        if(!deviceHelper.deviceList.contains(data.devicename)) {
+            logger.fatal("Couldn't load device class.");
+            System.exit(3);
+        }
     }
 
     // prevent screen from turning off

@@ -26,6 +26,9 @@ package net.karatek.kenaten.device;
 import net.karatek.kenaten.objects.Coordinate;
 
 public class z3 {
+    public static String vendor = "Sony";
+    public static String androidVersion = "8.1";
+    public static String model = "Xperia Z3";
     public static String deviceCodename = "z3";
     public static Coordinate battleBox = new Coordinate(1365, 428);
     public static Coordinate placeholder = new Coordinate(910, 831);

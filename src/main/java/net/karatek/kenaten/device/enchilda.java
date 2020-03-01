@@ -23,5 +23,25 @@ package net.karatek.kenaten.device;
  *
  */
 
+import net.karatek.kenaten.objects.Coordinate;
+
 public class enchilda {
+
+    // Done:
+
+    public static String vendor = "Oneplus";
+    public static String androidVersion = "10";
+    public static String model = "6";
+    public static String deviceCodename = "enchilda";
+    public static Coordinate battleBox = new Coordinate(1730, 432);
+    public static Coordinate placeholder = new Coordinate(910, 831);
+    public static Coordinate quitButton = new Coordinate(1743, 1018);
+    public static Coordinate skeleton = new Coordinate(108, 432);
+    public static Coordinate supportLoadingBar = new Coordinate(1096, 1029);
+    public static Coordinate swipea = new Coordinate(539, 529);
+    public static Coordinate swipeb = new Coordinate(1051, 535);
+    public static Coordinate supportChecker = new Coordinate(910, 831);
+    public static Coordinate supportTargetLocation = new Coordinate(331, 856);
+    public static Coordinate sidebar = new Coordinate(2093, 540);
+    public static Coordinate tab = new Coordinate(1409, 140);
 }

@@ -23,7 +23,6 @@ package net.karatek.kenaten.device;
  *
  */
 
-import net.karatek.kenaten.Main;
 import net.karatek.kenaten.objects.Coordinate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -40,6 +39,8 @@ public class Device {
         switch (deviceCodename) {
             case "z3":
                 return z3.battleBox;
+            case "enchilda":
+                return enchilda.battleBox;
             default:
                 return null;
 
@@ -51,6 +52,8 @@ public class Device {
         switch (deviceCodename) {
             case "z3":
                 return z3.placeholder;
+            case "enchilda":
+                return enchilda.placeholder;
             default:
                 return null;
 
@@ -61,6 +64,8 @@ public class Device {
         switch (deviceCodename) {
             case "z3":
                 return z3.quitButton;
+            case "enchilda":
+                return enchilda.quitButton;
             default:
                 return null;
 
@@ -71,6 +76,8 @@ public class Device {
         switch (deviceCodename) {
             case "z3":
                 return z3.skeleton;
+            case "enchilda":
+                return enchilda.skeleton;
             default:
                 return null;
 
@@ -81,6 +88,8 @@ public class Device {
         switch (deviceCodename) {
             case "z3":
                 return z3.supportLoadingBar;
+            case "enchilda":
+                return enchilda.supportLoadingBar;
             default:
                 return null;
 
@@ -91,6 +100,8 @@ public class Device {
         switch (deviceCodename) {
             case "z3":
                 return z3.swipea;
+            case "enchilda":
+                return enchilda.swipea;
             default:
                 return null;
 
@@ -101,6 +112,8 @@ public class Device {
         switch (deviceCodename) {
             case "z3":
                 return z3.swipeb;
+            case "enchilda":
+                return enchilda.swipeb;
             default:
                 return null;
 
@@ -111,6 +124,8 @@ public class Device {
         switch (deviceCodename) {
             case "z3":
                 return z3.supportChecker;
+            case "enchilda":
+                return enchilda.supportChecker;
             default:
                 return null;
 
@@ -121,6 +136,8 @@ public class Device {
         switch (deviceCodename) {
             case "z3":
                 return z3.supportTargetLocation;
+            case "enchilda":
+                return enchilda.supportTargetLocation;
             default:
                 return null;
 
@@ -131,6 +148,8 @@ public class Device {
         switch (deviceCodename) {
             case "z3":
                 return z3.sidebar;
+            case "enchilda":
+                return enchilda.sidebar;
             default:
                 return null;
 
@@ -141,18 +160,12 @@ public class Device {
         switch (deviceCodename) {
             case "z3":
                 return z3.tab;
+            case "enchilda":
+                return enchilda.tab;
             default:
                 return null;
 
         }
     }
 
-    // constructor; set variables
-    public Device(String codename){
-        deviceCodename = codename;
-        if(!deviceHelper.deviceList.contains(deviceCodename)) {
-            logger.fatal("Couldn't load device class.");
-            System.exit(3);
-        }
-    }
 }

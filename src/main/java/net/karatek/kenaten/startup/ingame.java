@@ -24,6 +24,7 @@ package net.karatek.kenaten.startup;
  */
 
 import net.karatek.kenaten.Main;
+import net.karatek.kenaten.device.Device;
 import net.karatek.kenaten.objects.sidebar;
 import net.karatek.kenaten.objects.tab;
 
@@ -33,7 +34,8 @@ public class ingame {
 
     public static void openAllianceTab() {
         // I don't have to say anything about this.
-        sidebar.click();
+
+        tap(Device.sidebar().getX(), Device.sidebar().getY());
         Main.logger.debug("Position of sidebar: " + sidebar.x + " " + sidebar.y);
         tab.click();
     }

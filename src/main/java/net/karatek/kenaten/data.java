@@ -32,7 +32,7 @@ public class data {
 
     public static String devicename = "enchilda";
 
-    public static Device device = new Device(devicename);
+    //public static Device device = new Device(devicename);
 
 
     public static boolean correctApp;
