@@ -36,136 +36,70 @@ public class Device {
     // Initialize variables
     public static String deviceCodename;
     public static Coordinate battleBox() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.battleBox;
-            case "enchilda":
-                return enchilda.battleBox;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(1365, 428);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(1730, 432);
+        return null;
 
     }
 
     public static Coordinate placeholder() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.placeholder;
-            case "enchilda":
-                return enchilda.placeholder;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(910, 831);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(910, 831);
+        return null;
     }
 
     public static Coordinate quitButton() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.quitButton;
-            case "enchilda":
-                return enchilda.quitButton;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(1743, 1018);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(1743, 1018);
+        return null;
     }
 
     public static Coordinate skeleton() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.skeleton;
-            case "enchilda":
-                return enchilda.skeleton;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(108, 432);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(108, 432);
+        return null;
     }
 
     public static Coordinate supportLoadingBar() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.supportLoadingBar;
-            case "enchilda":
-                return enchilda.supportLoadingBar;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(1096, 1029);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(1096, 1029);
+        return null;
     }
 
     public static Coordinate swipea() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.swipea;
-            case "enchilda":
-                return enchilda.swipea;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(539, 529);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(539, 529);
+        return null;
     }
 
     public static Coordinate swipeb() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.swipeb;
-            case "enchilda":
-                return enchilda.swipeb;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(1051, 535);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(1051, 535);
+        return null;
     }
 
     public static Coordinate supportChecker() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.supportChecker;
-            case "enchilda":
-                return enchilda.supportChecker;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(910, 831);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(910, 831);
+        return null;
     }
 
     public static Coordinate supportTargetLocation() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.supportTargetLocation;
-            case "enchilda":
-                return enchilda.supportTargetLocation;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(331, 856);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(331, 856);
+        return null;
     }
 
     public static Coordinate sidebar() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.sidebar;
-            case "enchilda":
-                return enchilda.sidebar;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(1900, 560);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(2093, 540);
+        return null;
     }
 
     public static Coordinate tab() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.tab;
-            case "enchilda":
-                return enchilda.tab;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(1167, 148);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(1409, 140);
+        return null;
     }
 
 }

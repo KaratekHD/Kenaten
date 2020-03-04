@@ -23,6 +23,7 @@ package net.karatek.kenaten;
  *
  */
 
+import net.karatek.kenaten.debug.positionDebug;
 import net.karatek.kenaten.exceptions.DeviceNameNotFoundException;
 import net.karatek.kenaten.game.offenseSupport;
 import net.karatek.kenaten.objects.battleBox;
@@ -78,6 +79,9 @@ public class Main {
 
         // shoot screenshot
         screenshot.shot();
+
+        // debug positions
+        positionDebug.printPositions();
 
         while (true) {
 

@@ -1,4 +1,4 @@
-package net.karatek.kenaten.device;
+package net.karatek.kenaten.debug;
 
 /*
  * Kenaten - an easy to use Gods Of Olympus bot.
@@ -23,27 +23,22 @@ package net.karatek.kenaten.device;
  *
  */
 
-import net.karatek.kenaten.objects.Coordinate;
 
-public class template {
+import net.karatek.kenaten.objects.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-    // Kenaten Device File
-    // Copy this to a package like this:
-    // net.karatek.kenaten.device.<vendor> and name the class <codename>
-    // See the wiki.lineageos.org if you don't know your devices codename.
+public class positionDebug {
+    // Initialize Logger
+    public static final Logger logger = LogManager.getLogger(positionDebug.class);
 
-    String vendor = "Generic Device";
-    String androidVersion = "10.0";
-    String model = "1";
-
-    Coordinate battleBox = new Coordinate(0, 0);
-    Coordinate placeholder = new Coordinate(0, 0);
-    Coordinate quitButton = new Coordinate(0, 0);
-    Coordinate skeleton = new Coordinate(0, 0);
-    Coordinate supportLoadingBar = new Coordinate(0, 0);
-    Coordinate swipea = new Coordinate(0, 0);
-    Coordinate swipeb = new Coordinate(0, 0);
-    Coordinate supportChecker = new Coordinate(0, 0);
-    Coordinate supportTargetLocation = new Coordinate(0, 0);
+    public static void printPositions() {
+        logger.debug("battleBox has x=" + battleBox.x + " and y=" + battleBox.y);
+        logger.debug("placeholder has x=" + placeholder.x + " and y=" + placeholder.y);
+        logger.debug("quitButton has x=" + quitButton.x + " and y=" + quitButton.y);
+        logger.debug("skelleton has x=" + skeleton.x + " and y=" + skeleton.y);
+        logger.debug("sidebar has x=" + sidebar.x + " and y=" + sidebar.y);
+        logger.debug("tab has x=" + tab.x + " and y=" + tab.y);
+    }
 
 }
