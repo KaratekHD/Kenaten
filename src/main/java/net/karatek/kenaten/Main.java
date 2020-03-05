@@ -30,9 +30,12 @@ import net.karatek.kenaten.objects.battleBox;
 import net.karatek.kenaten.startup.ingame;
 import net.karatek.kenaten.startup.preWork;
 import net.karatek.kenaten.utils.DeviceClass;
+import net.karatek.kenaten.utils.adb;
 import net.karatek.kenaten.utils.screenshot;
 
 import org.apache.logging.log4j.*;
+
+import java.util.concurrent.TimeUnit;
 
 public class Main {
 
@@ -63,9 +66,8 @@ public class Main {
 
         // print error message and return
         if(!data.correctApp) {
-            logger.fatal("App is not running.");
-            System.exit(1);
-            return;
+            logger.info("App is not running, starting...");
+            adb.runShellCommand("monkey -p com.aegisinteractive.goo -c android.intent.category.LAUNCHER 1");
         }
 
         // prevent screen from turning off
@@ -85,6 +87,11 @@ public class Main {
 
         while (true) {
 
+            try {
+                TimeUnit.SECONDS.sleep(3);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
             // print color of battlebox
             logger.debug("Color of 'battleBox' is " + battleBox.getColor());
 

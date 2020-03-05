@@ -37,7 +37,7 @@ public class Device {
     public static String deviceCodename;
     public static Coordinate battleBox() {
         if(deviceCodename.equals("z3")) return new Coordinate(1365, 428);
-        if(deviceCodename.equals("enchilda")) return new Coordinate(1730, 432);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(1728, 428);
         return null;
 
     }
