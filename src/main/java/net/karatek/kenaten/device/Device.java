@@ -42,15 +42,21 @@ public class Device {
 
     }
 
+    public static Coordinate wifiindicator() {
+        if(deviceCodename.equals("z3")) return new Coordinate(1365, 428); // TODO
+        if(deviceCodename.equals("enchilda")) return new Coordinate(1118, 537);
+        return null;
+    }
+
     public static Coordinate placeholder() {
         if(deviceCodename.equals("z3")) return new Coordinate(910, 831);
-        if(deviceCodename.equals("enchilda")) return new Coordinate(910, 831);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(1028, 368);
         return null;
     }
 
     public static Coordinate quitButton() {
         if(deviceCodename.equals("z3")) return new Coordinate(1743, 1018);
-        if(deviceCodename.equals("enchilda")) return new Coordinate(1743, 1018);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(1930, 1010);
         return null;
     }
 
@@ -62,7 +68,7 @@ public class Device {
 
     public static Coordinate supportLoadingBar() {
         if(deviceCodename.equals("z3")) return new Coordinate(1096, 1029);
-        if(deviceCodename.equals("enchilda")) return new Coordinate(1096, 1029);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(1252, 1033);
         return null;
     }
 

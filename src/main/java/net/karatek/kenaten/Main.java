@@ -33,7 +33,9 @@ import net.karatek.kenaten.utils.DeviceClass;
 import net.karatek.kenaten.utils.adb;
 import net.karatek.kenaten.utils.screenshot;
 
+import net.karatek.kenaten.utils.wifiChecker;
 import org.apache.logging.log4j.*;
+import org.omg.CORBA.TIMEOUT;
 
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
@@ -52,9 +54,12 @@ public class Main {
         System.out.println("Copyright (C) 2020 The Kenaten Development Team");
 
         System.out.println();
-        System.out.println("This program comes with ABSOLUTELY NO WARRANTY; for details use `license'.\n" +
-            "This is free software, and you are welcome to redistribute it \n" +
-            "under certain conditions; use 'license' for details.");
+        System.out.println("╔═License information══════════════════════════════════════════════════════╗");
+        System.out.println("║This program comes with ABSOLUTELY NO WARRANTY; for details use `license'.║");
+        System.out.println("║This is free software, and you are welcome to redistribute it             ║");
+        System.out.println("║under certain conditions; use 'license' for details.                      ║");
+        System.out.println("╚══════════════════════════════════════════════════════════════════════════╝");
+
 
         // check whether argument is provided
         String arg;
@@ -65,6 +70,11 @@ public class Main {
         switch (arg) {
 
             case "run":
+
+                System.out.println("------------------------------------------------------------------------");
+                System.out.println("Logger");
+                System.out.println("------------------------------------------------------------------------");
+
                 if(args.length < 2) {
                     logger.fatal("Please provide a device codename.");
                     return;
@@ -88,6 +98,11 @@ public class Main {
                 if(!data.correctApp) {
                     logger.info("App is not running, starting...");
                     adb.runShellCommand("monkey -p com.aegisinteractive.goo -c android.intent.category.LAUNCHER 1");
+                    try {
+                        TimeUnit.SECONDS.sleep(30);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
                 }
 
                 // prevent screen from turning off
@@ -107,6 +122,8 @@ public class Main {
 
                 while (true) {
 
+                    wifiChecker.checkWifi();
+
                     try {
                         TimeUnit.SECONDS.sleep(3);
                     } catch (InterruptedException e) {
@@ -124,7 +141,7 @@ public class Main {
                     }
 
                     // check if offense support is needed
-                    if(battleBox.getColor().equals("24715858")) {
+                    if(!(battleBox.getColor().equals("19712541") || battleBox.getColor().equals("107162156"))) {
                         // click battlebox
                         battleBox.click();
                         // start supporting (wip)

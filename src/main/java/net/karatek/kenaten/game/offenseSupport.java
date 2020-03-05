@@ -23,27 +23,30 @@ package net.karatek.kenaten.game;
  *
  */
 
-import net.karatek.kenaten.Main;
+import net.karatek.kenaten.objects.placeholder;
 import net.karatek.kenaten.objects.quitButton;
 import net.karatek.kenaten.objects.skeleton;
 import net.karatek.kenaten.utils.adb;
-import net.karatek.kenaten.utils.image;
 import net.karatek.kenaten.utils.screenshot;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.concurrent.TimeUnit;
 
 public class offenseSupport {
 
+    // Initialize Logger
+    public static final Logger logger = LogManager.getLogger(offenseSupport.class);
+
     public static void support() {
 
-        // TO-DO
-        // check whether is loaded and catch bird
-        // Down there: Read out from device file
-        while (!image.getPixel(1096, 1029).equals("99194140")) {
-            Main.logger.debug("Loading...");
-        }
+        logger.info("Running offense support.");
 
-        Main.logger.debug("Loaded.");
+        try {
+            TimeUnit.SECONDS.sleep(5);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
         // Swipe to the upper left corner
         adb.runShellCommand("input swipe 539 529 1051 535");
@@ -51,7 +54,11 @@ public class offenseSupport {
         // Place object
         skeleton.click();
 
-        while (!(image.getPixel(910, 831).equals(107162156))) {
+
+        boolean run = true;
+
+        while (run) {
+            logger.debug("Color of placeholder: " + placeholder.getColor());
             screenshot.shot();
 
             // Maybe improve these coordinates?
@@ -59,16 +66,22 @@ public class offenseSupport {
 
             try {
                 // Maybe I should just check when I am able to place again?
-                TimeUnit.SECONDS.sleep(15);
+                TimeUnit.SECONDS.sleep(3);
             } catch (InterruptedException e) {
                 e.printStackTrace();
+            }
+
+            if(placeholder.getColor().equals("10719458")) {
+                run = false;
+                quitButton.click();
+                logger.debug("I should work...");
             }
 
         }
 
         // Exit
 
-        quitButton.click();
+
 
     }
 }
