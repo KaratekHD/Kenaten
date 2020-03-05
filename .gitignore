@@ -2,3 +2,7 @@
 /src/main/java/net/karatek/kenaten/experiments/
 /.idea/
 /target/
+/out/
+/lib/
+/devices/
+/.idea/
