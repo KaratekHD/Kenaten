@@ -32,6 +32,7 @@ public class adb {
     public static String runShellCommand(String cmd) {
 
         try {
+
             // This is not supposed to stay like it is. It is just stupid and I am to lazy to add this stuff to my $PATH.
             // Same as in net.karatek.kenaten.utils.linux, am not gonna explain it again here cuz i'm lazy.
             Process p = Runtime.getRuntime().exec("/home/jens/Executables/platform-tools/adb shell " + cmd);
@@ -50,6 +51,7 @@ public class adb {
         } catch (Exception ignored) {
             ignored.printStackTrace();
         }
+        
         return "";
     }
 
@@ -57,4 +59,5 @@ public class adb {
     public static void tap(int x, int y) {
         runShellCommand("input tap " + x + " " + y);
     }
+
 }
