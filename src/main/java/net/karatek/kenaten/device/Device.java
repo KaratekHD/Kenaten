@@ -23,7 +23,6 @@ package net.karatek.kenaten.device;
  *
  */
 
-import net.karatek.kenaten.Main;
 import net.karatek.kenaten.objects.Coordinate;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -37,122 +36,70 @@ public class Device {
     // Initialize variables
     public static String deviceCodename;
     public static Coordinate battleBox() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.battleBox;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(1365, 428);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(1730, 432);
+        return null;
 
     }
 
     public static Coordinate placeholder() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.placeholder;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(910, 831);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(910, 831);
+        return null;
     }
 
     public static Coordinate quitButton() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.quitButton;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(1743, 1018);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(1743, 1018);
+        return null;
     }
 
     public static Coordinate skeleton() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.skeleton;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(108, 432);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(108, 432);
+        return null;
     }
 
     public static Coordinate supportLoadingBar() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.supportLoadingBar;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(1096, 1029);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(1096, 1029);
+        return null;
     }
 
     public static Coordinate swipea() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.swipea;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(539, 529);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(539, 529);
+        return null;
     }
 
     public static Coordinate swipeb() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.swipeb;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(1051, 535);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(1051, 535);
+        return null;
     }
 
     public static Coordinate supportChecker() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.supportChecker;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(910, 831);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(910, 831);
+        return null;
     }
 
     public static Coordinate supportTargetLocation() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.supportTargetLocation;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(331, 856);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(331, 856);
+        return null;
     }
 
     public static Coordinate sidebar() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.sidebar;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(1900, 560);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(2093, 540);
+        return null;
     }
 
     public static Coordinate tab() {
-        switch (deviceCodename) {
-            case "z3":
-                return z3.tab;
-            default:
-                return null;
-
-        }
+        if(deviceCodename.equals("z3")) return new Coordinate(1167, 148);
+        if(deviceCodename.equals("enchilda")) return new Coordinate(1409, 140);
+        return null;
     }
 
-    // constructor; set variables
-    public Device(String codename){
-        deviceCodename = codename;
-        if(!deviceHelper.deviceList.contains(deviceCodename)) {
-            logger.fatal("Couldn't load device class.");
-            System.exit(3);
-        }
-    }
 }

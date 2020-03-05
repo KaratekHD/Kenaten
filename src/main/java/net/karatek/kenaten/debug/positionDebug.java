@@ -1,4 +1,4 @@
-package net.karatek.kenaten.device;
+package net.karatek.kenaten.debug;
 
 /*
  * Kenaten - an easy to use Gods Of Olympus bot.
@@ -23,5 +23,22 @@ package net.karatek.kenaten.device;
  *
  */
 
-public class enchilda {
+
+import net.karatek.kenaten.objects.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class positionDebug {
+    // Initialize Logger
+    public static final Logger logger = LogManager.getLogger(positionDebug.class);
+
+    public static void printPositions() {
+        logger.debug("battleBox has x=" + battleBox.x + " and y=" + battleBox.y);
+        logger.debug("placeholder has x=" + placeholder.x + " and y=" + placeholder.y);
+        logger.debug("quitButton has x=" + quitButton.x + " and y=" + quitButton.y);
+        logger.debug("skelleton has x=" + skeleton.x + " and y=" + skeleton.y);
+        logger.debug("sidebar has x=" + sidebar.x + " and y=" + sidebar.y);
+        logger.debug("tab has x=" + tab.x + " and y=" + tab.y);
+    }
+
 }
