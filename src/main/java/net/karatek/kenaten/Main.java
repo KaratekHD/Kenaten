@@ -50,67 +50,72 @@ public class Main {
         System.out.println("Running Kenaten v" + VERSION);
         System.out.println("Copyright (C) 2020 The Kenaten Development Team");
 
-        // check if game is running
-        // TO-DO: Maybe autostart if not?
-        preWork.checkCorrectApp();
+        switch (args[0]) {
+            case "run":
+                // check if game is running
+                // TO-DO: Maybe autostart if not?
+                preWork.checkCorrectApp();
 
-        // Load list of supported devices and coordinates
-        preWork.initializeDevices();
+                // Load list of supported devices and coordinates
+                preWork.initializeDevices();
 
-        // set device from data class
-        try {
-            DeviceClass.setDevice(data.devicename);
-        } catch (DeviceNameNotFoundException e) {
-            e.printStackTrace();
+                // set device from data class
+                try {
+                    DeviceClass.setDevice(data.devicename);
+                } catch (DeviceNameNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+                // print error message and return
+                if(!data.correctApp) {
+                    logger.info("App is not running, starting...");
+                    adb.runShellCommand("monkey -p com.aegisinteractive.goo -c android.intent.category.LAUNCHER 1");
+                }
+
+                // prevent screen from turning off
+                preWork.keepScreenOn();
+
+                // add shutdown hook
+                preWork.addShutdownHook();
+
+                // open alliance tab (Self explaining, isn't it? )
+                ingame.openAllianceTab();
+
+                // shoot screenshot
+                screenshot.shot();
+
+                // debug positions
+                positionDebug.printPositions();
+
+                while (true) {
+
+                    try {
+                        TimeUnit.SECONDS.sleep(3);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    // print color of battlebox
+                    logger.debug("Color of 'battleBox' is " + battleBox.getColor());
+
+                    // always check whether app is running and exit if not
+                    preWork.checkCorrectApp();
+                    if(!data.correctApp) {
+                        logger.fatal("App is not running.");
+                        System.exit(1);
+                        return;
+                    }
+
+                    // check if offense support is needed
+                    if(battleBox.getColor().equals("24715858")) {
+                        // click battlebox
+                        battleBox.click();
+                        // start supporting (wip)
+                        offenseSupport.support();
+                    }
+                }
         }
 
-        // print error message and return
-        if(!data.correctApp) {
-            logger.info("App is not running, starting...");
-            adb.runShellCommand("monkey -p com.aegisinteractive.goo -c android.intent.category.LAUNCHER 1");
-        }
 
-        // prevent screen from turning off
-        preWork.keepScreenOn();
-
-        // add shutdown hook
-        preWork.addShutdownHook();
-
-        // open alliance tab (Self explaining, isn't it? )
-        ingame.openAllianceTab();
-
-        // shoot screenshot
-        screenshot.shot();
-
-        // debug positions
-        positionDebug.printPositions();
-
-        while (true) {
-
-            try {
-                TimeUnit.SECONDS.sleep(3);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            // print color of battlebox
-            logger.debug("Color of 'battleBox' is " + battleBox.getColor());
-
-            // always check whether app is running and exit if not
-            preWork.checkCorrectApp();
-            if(!data.correctApp) {
-                logger.fatal("App is not running.");
-                System.exit(1);
-                return;
-            }
-
-            // check if offense support is needed
-            if(battleBox.getColor().equals("24715858")) {
-                // click battlebox
-                battleBox.click();
-                // start supporting (wip)
-                offenseSupport.support();
-            }
-        }
     }
 
 
