@@ -30,10 +30,7 @@ public class data {
 
     // In this class we store some important variables
 
-    public static String devicename = "enchilda";
-
-    //public static Device device = new Device(devicename);
-
+    public static String devicename = "";
 
     public static boolean correctApp;
 

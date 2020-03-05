@@ -35,6 +35,7 @@ import net.karatek.kenaten.utils.screenshot;
 
 import org.apache.logging.log4j.*;
 
+import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
@@ -50,8 +51,25 @@ public class Main {
         System.out.println("Running Kenaten v" + VERSION);
         System.out.println("Copyright (C) 2020 The Kenaten Development Team");
 
-        switch (args[0]) {
+        System.out.println();
+        System.out.println("This program comes with ABSOLUTELY NO WARRANTY; for details use `license'.\n" +
+            "This is free software, and you are welcome to redistribute it \n" +
+            "under certain conditions; use 'license' for details.");
+
+        // check whether argument is provided
+        String arg;
+        if(args.length == 0) {
+            arg = "";
+        }else arg = args[0];
+
+        switch (arg) {
+
             case "run":
+                if(args.length < 2) {
+                    logger.fatal("Please provide a device codename.");
+                    return;
+                }
+                data.devicename = args[1];
                 // check if game is running
                 // TO-DO: Maybe autostart if not?
                 preWork.checkCorrectApp();
@@ -113,6 +131,49 @@ public class Main {
                         offenseSupport.support();
                     }
                 }
+            case "devices":
+                System.out.println("Supported devices are:\n");
+                System.out.println("╔═codename═════════╦═common name═════════════════════════╦═maintainer═══════╗");
+                System.out.println("║enchilda          ║OnePlus 6 (WIP)                      ║Karatek_HD        ║");
+                System.out.println("║z3                ║Sony Xperia Z3                       ║Karatek_HD        ║");
+                System.out.println("║serranoltexx      ║Samsung Galaxy S4 Mini LTE (TODO)    ║ttzug             ║");
+                System.out.println("╚══════════════════╩═════════════════════════════════════╩══════════════════╝");
+                break;
+            case "license":
+                System.out.println("\nKenaten - an easy to use Gods Of Olympus bot.");
+                System.out.println();
+                System.out.println("This program is free software: you can redistribute it and/or modify");
+                System.out.println("it under the terms of the GNU General Public License as published by");
+                System.out.println("the Free Software Foundation, either version 3 of the License, or");
+                System.out.println("(at your option) any later version.");
+                System.out.println();
+                System.out.println("This program is distributed in the hope that it will be useful,");
+                System.out.println("but WITHOUT ANY WARRANTY; without even the implied warranty of");
+                System.out.println("MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the");
+                System.out.println("GNU General Public License for more details.");
+                System.out.println();
+                System.out.println("You should have received a copy of the GNU General Public License");
+                System.out.println("along with this program.  If not, see <http://www.gnu.org/licenses/>.");
+                break;
+            case "about":
+                System.out.println("\nKenaten v" + VERSION);
+                System.out.println("List of contributors:");
+                System.out.println("\n╔═name═════════╦═role═══════════════════════════════════════╗");
+                System.out.println("║Karatek_HD    ║Main developer                              ║");
+                System.out.println("║ttzug         ║Assistance                                  ║");
+                System.out.println("╚══════════════╩════════════════════════════════════════════╝");
+                System.out.println("\nUse 'license' to get copyright notices!");
+                break;
+            default:
+                System.out.println("\nBelow a list of available arguments:\n");
+                System.out.println("╔═argument══════╦═description═══════════════════════════════════════╗");
+                System.out.println("║run            ║Start the bot. Don't forget to provide a device!   ║");
+                System.out.println("║help           ║Print this list.                                   ║");
+                System.out.println("║about          ║Get version information.                           ║");
+                System.out.println("║license        ║Get license information.                           ║");
+                System.out.println("║devices        ║Shows a list of supported devices.                 ║");
+                System.out.println("╚═══════════════╩═══════════════════════════════════════════════════╝");
+                break;
         }
 
 
