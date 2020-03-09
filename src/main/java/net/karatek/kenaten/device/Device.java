@@ -4,7 +4,7 @@ package net.karatek.kenaten.device;
  * Kenaten - an easy to use Gods Of Olympus bot.
  *
  * @author Karatek_HD
- * Copyright (C) 2020 Karatek_HD <kontakt@karatek.net>
+ * Copyright (C) 2020 Karatek_HD x
  * Copyright (C) 2020 The Kenaten Development Team
  * Tested by the Alliance "Tod oder Lebendig" with great support from our leader Nyx.
  *
