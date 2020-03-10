@@ -20,5 +20,16 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
-    - name: Build with Maven
-      run: mvn -B clean --file pom.xml && mvn -B compile --file pom.xml && mvn -B package --file pom.xml
+    - name: Cache Maven packages
+      uses: actions/cache@v1
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
+    - name: Clean up
+      run: mvn -B clean --file pom.xml
+    - name: Compile with Maven
+      run: mvn -B compile --file pom.xml
+    - name: Package with Maven
+      run:  mvn -B package --file pom.xml && mkdir staging && cp target/*.jar staging
+      
