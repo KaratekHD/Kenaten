@@ -32,8 +32,6 @@ jobs:
       run: mvn -B clean --file pom.xml
     - name: Compile with Maven
       run: mvn -B compile --file pom.xml
-    - name: Package with Maven
-      run:  mvn -B package --file pom.xml && mkdir staging && cp target/*.jar staging
   deploy:
     
     runs-on: ubuntu-latest
@@ -41,6 +39,10 @@ jobs:
     name: Upload artifacts
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - run:  mvn -B package --file pom.xml
       - run: mkdir staging && cp target/*.jar staging
       - uses: actions/upload-artifact@v1
         with:
