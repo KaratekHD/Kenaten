@@ -178,7 +178,6 @@ public class Main {
                 System.out.println("\n╔═name═════════╦═role═══════════════════════════════════════╗");
                 System.out.println("║Karatek_HD    ║Main developer                              ║");
                 System.out.println("║ttzug         ║Assistance                                  ║");
-                System.out.println("║Nyx           ║The Leader of Tod oder Lebendig, testing    ║");
                 System.out.println("╚══════════════╩════════════════════════════════════════════╝");
                 System.out.println("\nUse 'license' to get copyright notices!");
                 break;
