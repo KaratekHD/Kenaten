@@ -153,7 +153,7 @@ public class Main {
                 System.out.println("╔═codename═════════╦═common name═════════════════════════╦═maintainer═══════╗");
                 System.out.println("║enchilda          ║OnePlus 6 (WIP)                      ║Karatek_HD        ║");
                 System.out.println("║z3                ║Sony Xperia Z3                       ║Karatek_HD        ║");
-                System.out.println("║serranoltexx      ║Samsung Galaxy S4 Mini LTE (TODO)    ║ttzug             ║"); //bin dabei... //TODO
+                System.out.println("║serranoltexx      ║Samsung Galaxy S4 Mini LTE (TODO)    ║ttzug             ║"); //bin dabei
                 System.out.println("╚══════════════════╩═════════════════════════════════════╩══════════════════╝");
                 break;
             case "license":
