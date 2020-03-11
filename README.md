@@ -1,5 +1,7 @@
 # Kenaten - an easy to use Gods of Olympus bot
 
+![Java CI with Maven](https://github.com/KaratekHD/Kenaten/workflows/Java%20CI%20with%20Maven/badge.svg)
+
 Kenaten is our free and opensource Gods of Olympus (goo) bot. It is currently under heavy development,
 and not usable at all. When it's finished, it will help your alliance by supporting other players in their battles.
 
