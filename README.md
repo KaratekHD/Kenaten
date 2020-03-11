@@ -1,0 +1,2 @@
+# Kenaten
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fdb77f7a9ed6435bbf4690b6d2b36eaa)](https://app.codacy.com/manual/KaratekHD/Kenaten?utm_source=github.com&utm_medium=referral&utm_content=KaratekHD/Kenaten&utm_campaign=Badge_Grade_Settings)
