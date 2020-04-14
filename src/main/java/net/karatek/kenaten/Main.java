@@ -35,9 +35,7 @@ import net.karatek.kenaten.utils.screenshot;
 
 import net.karatek.kenaten.utils.wifiChecker;
 import org.apache.logging.log4j.*;
-import org.omg.CORBA.TIMEOUT;
 
-import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
@@ -46,7 +44,6 @@ public class Main {
 
     // Initialize Logger
     public static final Logger logger = LogManager.getLogger(Main.class);
-
 
     public static void main(String[] args) {
 
@@ -70,7 +67,6 @@ public class Main {
         switch (arg) {
 
             case "run":
-
                 System.out.println("------------------------------------------------------------------------");
                 System.out.println("Logger");
                 System.out.println("------------------------------------------------------------------------");
@@ -142,12 +138,15 @@ public class Main {
 
                     // check if offense support is needed
                     if(!(battleBox.getColor().equals("19712541") || battleBox.getColor().equals("107162156"))) {
+                        
                         // click battlebox
                         battleBox.click();
                         // start supporting (wip)
                         offenseSupport.support();
+
                     }
                 }
+
             case "devices":
                 System.out.println("Supported devices are:\n");
                 System.out.println("╔═codename═════════╦═common name═════════════════════════╦═maintainer═══════╗");
@@ -156,6 +155,7 @@ public class Main {
                 System.out.println("║serranoltexx      ║Samsung Galaxy S4 Mini LTE (TODO)    ║ttzug             ║"); //bin dabei
                 System.out.println("╚══════════════════╩═════════════════════════════════════╩══════════════════╝");
                 break;
+
             case "license":
                 System.out.println("\nKenaten - an easy to use Gods Of Olympus bot.");
                 System.out.println();
@@ -172,6 +172,7 @@ public class Main {
                 System.out.println("You should have received a copy of the GNU General Public License");
                 System.out.println("along with this program.  If not, see <http://www.gnu.org/licenses/>.");
                 break;
+
             case "about":
                 System.out.println("\nKenaten v" + VERSION);
                 System.out.println("List of contributors:");
@@ -182,6 +183,7 @@ public class Main {
                 System.out.println("╚══════════════╩════════════════════════════════════════════╝");
                 System.out.println("\nUse 'license' to get copyright notices!");
                 break;
+
             default:
                 System.out.println("\nBelow a list of available arguments:\n");
                 System.out.println("╔═argument══════╦═description═══════════════════════════════════════╗");
@@ -192,10 +194,9 @@ public class Main {
                 System.out.println("║devices        ║Shows a list of supported devices.                 ║");
                 System.out.println("╚═══════════════╩═══════════════════════════════════════════════════╝");
                 break;
+
         }
 
-
     }
-
 
 }
